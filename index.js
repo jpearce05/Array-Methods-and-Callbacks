@@ -1,51 +1,51 @@
 import { fifaData } from './fifa.js';
 console.log(fifaData);
 
-{
-    "Year": 2014,
-    "Datetime": "12 Jul 2014 - 17:00",
-    "Stage": "Play-off for third place",
-    "Stadium": "Estadio Nacional",
-    "City": "Brasilia",
-    "Home Team Name": "Brazil",
-    "Home Team Goals": 0,
-    "Away Team Goals": 3,
-    "Away Team Name": "Netherlands",
-    "Win conditions": "",
-    "Attendance": 68034,
-    "Half-time Home Goals": 0,
-    "Half-time Away Goals": 2,
-    "Referee": "HAIMOUDI Djamel (ALG)",
-    "Assistant 1": "ACHIK Redouane (MAR)",
-    "Assistant 2": "ETCHIALI Abdelhak (ALG)",
-    "RoundID": 255957,
-    "MatchID": 300186502,
-    "Home Team Initials": "BRA",
-    "Away Team Initials": "NED"
-  },
+// {
+//     "Year": 2014,
+//     "Datetime": "12 Jul 2014 - 17:00",
+//     "Stage": "Play-off for third place",
+//     "Stadium": "Estadio Nacional",
+//     "City": "Brasilia",
+//     "Home Team Name": "Brazil",
+//     "Home Team Goals": 0,
+//     "Away Team Goals": 3,
+//     "Away Team Name": "Netherlands",
+//     "Win conditions": "",
+//     "Attendance": 68034,
+//     "Half-time Home Goals": 0,
+//     "Half-time Away Goals": 2,
+//     "Referee": "HAIMOUDI Djamel (ALG)",
+//     "Assistant 1": "ACHIK Redouane (MAR)",
+//     "Assistant 2": "ETCHIALI Abdelhak (ALG)",
+//     "RoundID": 255957,
+//     "MatchID": 300186502,
+//     "Home Team Initials": "BRA",
+//     "Away Team Initials": "NED"
+//   },
 
-  {
-    "Year": 2014,
-    "Datetime": "13 Jul 2014 - 16:00",
-    "Stage": "Final",
-    "Stadium": "Estadio do Maracana",
-    "City": "Rio De Janeiro",
-    "Home Team Name": "Germany",
-    "Home Team Goals": 1,
-    "Away Team Goals": 0,
-    "Away Team Name": "Argentina",
-    "Win conditions": "Germany win after extra time",
-    "Attendance": 74738,
-    "Half-time Home Goals": 0,
-    "Half-time Away Goals": 0,
-    "Referee": "Nicola RIZZOLI (ITA)",
-    "Assistant 1": "Renato FAVERANI (ITA)",
-    "Assistant 2": "Andrea STEFANI (ITA)",
-    "RoundID": 255959,
-    "MatchID": 300186501,
-    "Home Team Initials": "GER",
-    "Away Team Initials": "ARG"
-  },
+//   {
+//     "Year": 2014,
+//     "Datetime": "13 Jul 2014 - 16:00",
+//     "Stage": "Final",
+//     "Stadium": "Estadio do Maracana",
+//     "City": "Rio De Janeiro",
+//     "Home Team Name": "Germany",
+//     "Home Team Goals": 1,
+//     "Away Team Goals": 0,
+//     "Away Team Name": "Argentina",
+//     "Win conditions": "Germany win after extra time",
+//     "Attendance": 74738,
+//     "Half-time Home Goals": 0,
+//     "Half-time Away Goals": 0,
+//     "Referee": "Nicola RIZZOLI (ITA)",
+//     "Assistant 1": "Renato FAVERANI (ITA)",
+//     "Assistant 2": "Andrea STEFANI (ITA)",
+//     "RoundID": 255959,
+//     "MatchID": 300186501,
+//     "Home Team Initials": "GER",
+//     "Away Team Initials": "ARG"
+//   },
 
 
 // ⚽️ M  V P ⚽️ //
@@ -60,40 +60,103 @@ console.log(fifaData);
 (d) Away Team goals for 2014 world cup final
 (e) Winner of 2014 world cup final */
 
+// test
 console.log(fifaData[0].Year);
-console.log(fifaData[].)
 
+// Year = 2014 && Stage = Final 
+// "Year": 2014
+// "Stage": "Final"
 
+// filter out the date to just include 2014 & Stage = "Final"
+const team2014 = fifaData.filter(function(item) {
+    return item.Year === 2014 && item.Stage === "Final";
 
+});
+
+console.log(team2014);
+console.log(team2014["Home Team Name"]);
+console.log(team2014[0]["Home Team Name"]);
+console.log(team2014[0]["Home Team Goals"]);
+console.log(team2014[0]["Away Team Goals"]);
+console.log(team2014[0]["Win conditions"]);
 
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
-function getFinals(/* code here */) {
+// fifaData 
 
-    /* code here */
+//     "Stage": "Final",
+// map or filter?? 
 
-};
+let getFinals = fifaData.filter(function(item) {
+    return item.Stage === "Final";
+});
+
+console.log(getFinals);
+
 
 /* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
 
-function getYears(/* code here */) {
+//     "Year": 2014
 
-    /* code here */
+function getYears(data, callback) {
+    const years = [];
+    data.map(function(year) {
+    years.push(year["Year"]);
+
+    });
+    
+    return years;
 
 };
 
-getYears();
+
+console.log(getYears(fifaData, getFinals));
+
+
 
 /* Task 5: Implement a higher-order function called `getWinners`, that accepts the callback function `getFinals()` and determine the winner (home or away) of each `finals` game. Return the name of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
+// 2nd attempt 
+
+function getYears(data, callback) {
+    const winners = [];
+    data.filter(function (year) {
+        if home > away
+        return home team name (push into array)
+        else 
+        return away team name
+        
+    years.push(year["Year"]);
+
+    });
+    
+    return years;
+
+};
+
+
+console.log(getYears(fifaData, getFinals));
+
+
+/// 1st attempt 
+function getWinners(callback) {
+    const winners = getFinals.filter(function (winner) {
+        
+    })
+
+    
+     winners.push(fifaData.)                            //  forEach finals game get winners 
+     console.log(getFinals);
+     }             
+                                                // return country
+
 
     /* code here */
 
 };
 
-getWinners();
+getWinners(getFinals);
 
 /* Task 6: Implement a higher-order function called `getWinnersByYear` that accepts the following parameters and returns a set of strings "In {year}, {country} won the world cup!" 
 
