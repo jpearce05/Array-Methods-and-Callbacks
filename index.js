@@ -1,16 +1,70 @@
 import { fifaData } from './fifa.js';
 console.log(fifaData);
 
+{
+    "Year": 2014,
+    "Datetime": "12 Jul 2014 - 17:00",
+    "Stage": "Play-off for third place",
+    "Stadium": "Estadio Nacional",
+    "City": "Brasilia",
+    "Home Team Name": "Brazil",
+    "Home Team Goals": 0,
+    "Away Team Goals": 3,
+    "Away Team Name": "Netherlands",
+    "Win conditions": "",
+    "Attendance": 68034,
+    "Half-time Home Goals": 0,
+    "Half-time Away Goals": 2,
+    "Referee": "HAIMOUDI Djamel (ALG)",
+    "Assistant 1": "ACHIK Redouane (MAR)",
+    "Assistant 2": "ETCHIALI Abdelhak (ALG)",
+    "RoundID": 255957,
+    "MatchID": 300186502,
+    "Home Team Initials": "BRA",
+    "Away Team Initials": "NED"
+  },
+
+  {
+    "Year": 2014,
+    "Datetime": "13 Jul 2014 - 16:00",
+    "Stage": "Final",
+    "Stadium": "Estadio do Maracana",
+    "City": "Rio De Janeiro",
+    "Home Team Name": "Germany",
+    "Home Team Goals": 1,
+    "Away Team Goals": 0,
+    "Away Team Name": "Argentina",
+    "Win conditions": "Germany win after extra time",
+    "Attendance": 74738,
+    "Half-time Home Goals": 0,
+    "Half-time Away Goals": 0,
+    "Referee": "Nicola RIZZOLI (ITA)",
+    "Assistant 1": "Renato FAVERANI (ITA)",
+    "Assistant 2": "Andrea STEFANI (ITA)",
+    "RoundID": 255959,
+    "MatchID": 300186501,
+    "Home Team Initials": "GER",
+    "Away Team Initials": "ARG"
+  },
+
 
 // ⚽️ M  V P ⚽️ //
 
 /* Task 1: Investigate the data above. Practice accessing data by console.log-ing the following pieces of data 
 
 (a) Home Team name for 2014 world cup final
+// Year = 2014 && Stage = Final && "Home Team Name = "Germany" 
 (b) Away Team name for 2014 world cup final
+// Year = 2014 && Stage = Final && "Away Team Name = "Germany" 
 (c) Home Team goals for 2014 world cup final
 (d) Away Team goals for 2014 world cup final
 (e) Winner of 2014 world cup final */
+
+console.log(fifaData[0].Year);
+console.log(fifaData[].)
+
+
+
 
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
