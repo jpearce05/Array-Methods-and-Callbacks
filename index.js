@@ -119,44 +119,44 @@ console.log(getYears(fifaData, getFinals));
 
 // 2nd attempt 
 
-function getYears(data, callback) {
+function getWinners(data, callback) {
     const winners = [];
-    data.filter(function (year) {
-        if home > away
-        return home team name (push into array)
-        else 
-        return away team name
+    data.filter(function (winner) {
+        if  (winner["Home Team Goals"] > winner["Away Team Goals"]) {
+            winners.push(winner["Home Team Name"])
+        } else {
+            winners.push(winner["Away Team Name"])
+        }
         
-    years.push(year["Year"]);
-
+      
     });
     
-    return years;
+    return winners;
 
 };
 
 
-console.log(getYears(fifaData, getFinals));
+console.log(getWinners(fifaData, getFinals));
 
 
 /// 1st attempt 
-function getWinners(callback) {
-    const winners = getFinals.filter(function (winner) {
+// function getWinners(callback) {
+//     const winners = getFinals.filter(function (winner) {
         
-    })
+//     })
 
     
-     winners.push(fifaData.)                            //  forEach finals game get winners 
-     console.log(getFinals);
-     }             
-                                                // return country
+//      winners.push(fifaData.)          //  forEach finals game get winners 
+//      console.log(getFinals);
+//      }             
+//                                     // return country
 
 
-    /* code here */
+//     /* code here */
 
-};
+// };
 
-getWinners(getFinals);
+// getWinners(getFinals);
 
 /* Task 6: Implement a higher-order function called `getWinnersByYear` that accepts the following parameters and returns a set of strings "In {year}, {country} won the world cup!" 
 
@@ -165,11 +165,15 @@ Parameters:
  * callback function getYears
  */
 
-function getWinnersByYear(/* code here */) {
+function getWinnersByYear(cb1, cb2) {
+    return 
+
+    // "In {year}, {country} won the world cup!" 
+
 
 };
 
-getWinnersByYear();
+getWinnersByYear(getWinners, getYears);
 
 /* Task 7: Create a function called `getCountryWins` that takes the parameters `data` and `team initials` and returns the number of world cup wins that country has had. 
 
